@@ -37,3 +37,12 @@ function rotate(n) {
       info.classList.toggle("active");
     });
   });
+
+  const disclaimerPopup = document.getElementById("disclaimer-popup");
+  const disclaimerButton = document.getElementById("disclaimer-ok");
+
+  if (disclaimerButton && disclaimerPopup) {
+    disclaimerButton.addEventListener("click", () => {
+      disclaimerPopup.remove();
+    });
+  }
