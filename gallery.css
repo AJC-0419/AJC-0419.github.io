@@ -1,0 +1,168 @@
+@media (max-width: 992px) {
+    .masonry { column-count: 2; }
+}
+
+@media (max-width: 576px) {
+    .masonry { column-count: 1; }
+}
+
+html, body {
+    height: 100%;
+}
+
+body{
+    background-color: #FFFFFF;
+    display: flex;
+    flex-direction: column;
+}
+
+.bform-row{
+    position: absolute;
+    top: 25%;
+    left: 10%;
+    width: 80%;
+    max-width: 100%;
+    height: 150px;
+}
+
+#booking{
+    position: absolute;
+    width: 80%;
+    left: -10%;
+    top: 8%;
+    opacity: 75%;
+}
+
+
+#instruction{
+    position: absolute;
+    top:48%;
+    left: 10%;
+    right: 15%;
+    text-align: justify;
+}
+
+#bform{
+    font-family: 'PT Serif';
+    font-size: 3.5vw;
+    padding-top: 9vh;
+    padding-left: 4vh;
+}
+
+#instruction{
+    font-family: 'Poppins';
+    font-size: 23px;
+}
+
+#logo-top{
+    width: 90px;
+    max-width: 100%;
+    height: auto;
+}
+
+#home-btn {
+    position: relative;
+    z-index: 10;
+}
+
+
+#btn{
+    background-color: lightgray;
+}
+
+.btn-dark{
+    margin-left: -7%;
+    margin-top: -1%;
+    padding: -2%;
+}
+
+.form-container{
+    position: absolute;
+    margin-top: 22%;
+}
+
+.masonry {
+    column-count: 3;
+    column-gap: 1.25rem;
+    margin-bottom: 3rem;
+}
+
+.galImg {
+    width: 100%;
+    margin-bottom: 1.25rem;
+    border-radius: 10px;
+    break-inside: avoid;
+    display: block;
+    box-shadow: 0 6px 14px rgba(0,0,0,0.15);
+}
+
+.mainCover {
+    width: 100%;
+    display: block;
+    border-radius: 16px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.mainCover:hover {
+    transform: translateY(-10px) scale(1.05);
+    box-shadow: 0 20px 40px rgba(0,0,0,0.25);
+}
+
+.overlay {
+    position: absolute;
+    bottom: 20;
+    left: 0;
+    width: 100%;
+
+    padding: 16px;
+    text-decoration: none;
+
+    background: linear-gradient(
+    to top,
+    rgba(255,255,255,0.9),
+    rgba(255,255,255,0.6),
+    transparent
+    );
+
+    pointer-events: none;
+}
+
+.overlay h5 {
+    margin: 0;
+    font-family: "PT Serif";
+    font-size: 1.1rem;
+}
+
+.overlay p {
+    margin: 0;
+    font-family: "Poppins";
+    font-size: 0.85rem;
+}
+
+.card {
+    position: relative;
+    display: block;
+    overflow: hidden;
+    border-radius: 16px;
+    text-decoration: none;
+    border: none !important;
+    background: transparent !important;
+    box-shadow: none !important;
+}
+
+.card img {
+    display: block;
+}
+
+.page-wrapper {
+    flex: 1;
+}
+
+.footer {   
+    position: absolute;
+    top: 190%;
+    left: 17%;
+}
+
+
+

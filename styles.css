@@ -1,0 +1,306 @@
+body {
+    background-color: black;
+    color: white;
+    z-index: 1;
+    overflow-x: hidden;
+
+}
+
+h1,h2, h4{
+    font-family: 'Times New Roman';
+}
+
+#logo {
+    position: fixed;
+    top: 0;
+}
+
+.header-border {
+    display: flexbox;
+    align-items: center;
+    height: 100%;
+    margin-bottom: 10%;
+}
+
+#gallery .header {
+    position: relative;
+}
+#about p,
+#services p {
+    font-size: 150%;
+}
+
+#about .text p {
+    padding-left: 12%;
+}
+
+#services .SVG-header,
+#FAQs .SVG-header {
+    position: absolute;
+    top: 0;
+    right: 0;
+    z-index: -1;
+}
+
+#FAQs .SVG-header {
+    right: 10%;
+    top: -20%;
+}
+
+#services .row {
+    z-index: 2;
+    padding-top: 25%;
+}
+
+#FAQs td div:first-of-type {
+    position: relative;
+    z-index: 2;
+    border-radius: 30px;
+    box-shadow: 0px 20px 20px -10px gray;
+    background-color: black;
+}
+
+#FAQs table {
+    border-collapse: separate;
+    border-spacing: 0 30px;
+}
+
+#FAQs .header {
+    padding-top: 5%;
+    padding-left: 5%;
+}
+
+
+#book .SVG-header {
+    left: -13%;
+}
+
+
+
+.service-img {
+    border-radius: 30px;
+    box-shadow: 0px 20px 30px -10px gray;
+}
+
+.header {
+    position: relative;
+    width: 80%;
+}
+
+.SVG-header {
+    position: relative;
+    right: 10%;
+}
+
+.text {
+    position: absolute;
+    top: 0;
+    padding-left: 7%;
+    padding-top: 25%;
+}
+
+#home .text h1 {
+    font-size: 70px;
+    padding-bottom: 10%;
+}
+
+.desgin-cicle{
+    transform: rotate(-80deg);
+}
+
+#FAQs table td {
+    padding-left: 18%;
+}
+
+#gallery .SVG-header{
+ left: -3%;
+ padding-top: 4%;
+ z-index: 0;
+}
+
+.circle-group{
+    position: absolute;
+}
+
+#Circle-1{
+    transform: translateX(-60%);
+}
+#Circle-2{
+    transform: translateX(80%) translateY(-30%) rotate(200deg);
+}
+
+#sole-circle1{
+    transform: translateX(-83%) translateY(-30%);
+}
+#sole-circle2{
+    transform: translateX(100%);
+}
+
+
+
+#Star-1{
+    transform: translateX(-30%) translateY(-70%);
+}
+
+#Star-2{
+    transform: translateX(170%) translateY(-70%);
+}
+
+#Star-3{
+    transform: translateX(50%) translateY(-40%);
+}
+
+#Star-4{
+    transform: translateX(300%) translateY(40%);
+}
+
+#Star-5{
+    transform: translateX(160%) translateY(-70%);
+}
+
+#Star-6{
+    transform: translateX(50%) translateY(-40%);
+}
+
+.slideshow {
+  position: relative;
+  width: 500px;
+  height: 400px;
+  padding-left: 55%;
+  z-index: 1;
+background-color: #000000;
+ 
+}
+
+.Slides {
+  position: absolute;
+  top: 0;
+  width: 100%;
+  transition: transform 0.6s ease, opacity 0.6s ease;
+  opacity: 0.6;
+  background-color: #000000;
+}
+
+.Slides img {
+  width: 100%;
+  border-radius: 10px;
+}
+
+.Slides.left {
+  transform: perspective(6cm) translateX(-40%) scale(0.85) rotateY(10deg);
+  z-index: 1;
+  background-color: #000000;
+}
+
+.Slides.center {
+  transform: translateX(0) scale(1.1);
+  opacity: 1;
+  z-index: 3;
+  background-color: #000000;
+}
+
+.Slides.right {
+  transform: perspective(6cm) translateX(40%) scale(0.85) rotateY(-10deg);
+  z-index: 1;
+}
+
+.Slides .text-image {
+  display: none;
+}
+
+.Slides.center .text-image {
+  display: block;
+}
+.prev, .next {
+  cursor: pointer;
+  position: absolute;
+  top: 35%;
+  width: 60px;
+  padding: 16px;
+  color: black;
+  font-weight: bold;
+  text-decoration: none;
+  font-size: 18px;
+  transition: 0.6s ease;
+  border-radius: 200px;
+  background-color: lightgray;
+  z-index: 3;
+  right: 90%;
+  font-size: 20px;
+  opacity: 0.8;
+}
+
+.next {
+  right: -112%;
+}
+
+.text-image{
+  color: #f2f2f2;
+  font-size: 15px;
+  padding: 8px 12px;
+  position: absolute;
+  bottom: 8px;
+  width: 100%;
+  text-align: center;
+}
+
+
+.dot {
+  height: 6px;
+  width: 30px;
+  margin: 0 2px;
+  background-color: gray;
+  border-radius: 30px;
+  display: inline-block;
+  transition: background-color 0.6s ease;
+ margin: 10px;
+}
+.dots{
+   width: 220%;
+}
+
+.active, .dot:hover {
+  background-color: white;
+}
+
+
+.FAQ-info {
+    border-bottom: 1px solid white;
+    padding: 10px;
+    background: linear-gradient(to top, #333333, #000000);
+    width: 90%;
+    margin-left: 4.5%;
+    display: none;
+}
+
+.FAQ-link {
+    cursor: pointer;
+}
+
+.FAQ-info.active {
+    display: block;
+}
+
+button{
+    border-radius: 50px;
+    font-weight: 500;
+}
+
+button:nth-of-type(2){
+    background-color: gray;
+}
+
+.text-start{
+    font-weight: 700;
+}
+
+#book p{
+    font-size: large;
+}
+
+
+
+
+
+
+

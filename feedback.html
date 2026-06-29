@@ -1,0 +1,104 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="feedback.css">
+    <link href='https://fonts.googleapis.com/css?family=PT Serif' rel='stylesheet'>
+    <link href='https://fonts.googleapis.com/css?family=Poppins' rel='stylesheet'>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" 
+    integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+    <title>Feedback Form</title>
+</head>
+<body>
+    <div class="container w-75 mx-auto">
+    <div class="container-xl">
+        <div class="row" id="logo-row">
+            <div class="col d-flex justify-content-center" id="logo-col"><img src="logo/1.png" id="logo-top"></div>
+        </div>
+    </div>
+
+    <div class="row" id="home-btn">
+            <div class="col" id="home-btn">
+                <a class="btn btn-dark" href="Photo.html" role="button">« Home</a>
+            </div>
+        </div>
+
+    
+
+    <div class="container-lg">
+            <div class="booking-row">
+            <div class="booking-col"><img src="svg/feedback.svg" id="booking"></div>
+        </div>
+
+        <div class="bform-row">
+            <div class="bform-col"><p id="bform">Feedback Form</p></div>
+        </div>
+
+        <div class="bfinstruct-row-sm">
+            <div class="bfinstruct-col">
+                <p id="instruction">You may type in the space provided about your thoughts, comments, and suggestions
+                    about our services. Your input is valuable and will be helpful in making our services better.
+                </p>
+            </div>
+        </div>
+    </div>
+
+    <div class="container w-75 mx-auto px-5 form-container">
+    <form>
+
+        <div class="row justify-content-center mb-3">
+            <div class="col">
+                <textarea class="form-control" rows="15" id="feedback"></textarea>
+                <div class="invalid-feedback">Please type in your feedback.</div>
+            </div>
+        </div>
+
+        <div class="row justify-content-center mt-4">
+            <div class="col-md-4 d-flex justify-content-center">
+                <input type="button" value="Submit" class="btn w-50 p-3 my-5" id="btn" onclick="displayInfo()">
+            </div>
+        </div>
+
+    </form>
+
+</div>
+
+    </div>
+        <script>
+        function displayInfo() {
+
+            let feedback = document.getElementById('feedback');
+            let isValid = true;
+
+            function validate(input, condition) {
+                if (condition) {
+                    input.classList.add('is-invalid');
+                    input.classList.remove('is-valid');
+                    isValid = false;
+                } else {
+                    input.classList.remove('is-invalid');
+                    input.classList.add('is-valid');
+                }
+            }
+
+            validate(feedback, feedback.value === "");
+
+            if (isValid) {
+                Swal.fire({
+                    icon: "success",
+                    title: "Submitted!",
+                    text: "Your form has been submitted successfully."
+                }).then((result) => {
+                    if (result.isConfirmed) {
+                        window.location.href = "after_feedback.html";
+                    }
+                });
+            }
+        }
+
+
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
+</body>
+</html>

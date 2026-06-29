@@ -1,0 +1,185 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="booking.css">
+    <link href='https://fonts.googleapis.com/css?family=PT Serif' rel='stylesheet'>
+    <link href='https://fonts.googleapis.com/css?family=Poppins' rel='stylesheet'>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" 
+    integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+    <title>Booking Form</title>
+</head>
+<body>
+    <div class="container w-75 mx-auto">
+    <div class="container-xl">
+        <div class="row" id="logo-row">
+            <div class="col d-flex justify-content-center" id="logo-col"><img src="logo/1.png" id="logo-top"></div>
+        </div>
+    </div>
+
+    <div class="row" id="home-btn">
+            <div class="col" id="home-btn">
+                <a class="btn btn-dark" href="Photo.html" role="button">« Home</a>
+            </div>
+        </div>
+
+    
+
+    <div class="container-lg">
+            <div class="booking-row">
+            <div class="booking-col"><img src="svg/booking.svg" id="booking"></div>
+        </div>
+
+        <div class="bform-row">
+            <div class="bform-col"><p id="bform">Booking Form</p></div>
+        </div>
+
+        <div class="bfinstruct-row-sm">
+            <div class="bfinstruct-col">
+                <p id="instruction">Before booking, please contact the photographer first
+                    for inquiry of the initial deposit and online payment. The contact details are found
+                    in the FAQs section in the homepage. Afterwards, please fill out the necessary information.
+                </p>
+            </div>
+        </div>
+    </div>
+
+    <div class="container w-75 mx-auto p-5 form-container">
+
+    <form>
+        <div class="row justify-content-center mb-3">
+            <div class="col-md-4">
+                <label class="form-label">First Name</label>
+                <input type="text" class="form-control" id="firstName">
+                <div class="invalid-feedback">Please enter your First Name.</div>
+            </div>
+            <div class="col-md-4">
+                <label class="form-label">Last Name</label>
+                <input type="text" class="form-control" id="lastName">
+                <div class="invalid-feedback">Please enter your Last Name.</div>
+            </div>
+        </div>
+
+        <div class="row justify-content-center mb-3">
+            <div class="col-md-8">
+                <label class="form-label">Contact Number</label>
+                <input type="text" class="form-control" id="contactNumber">
+                <div class="invalid-feedback">Please enter your Contact Number.</div>
+            </div>
+        </div>
+
+        <div class="row justify-content-center mb-3">
+            <div class="col-md-8">
+                <label class="form-label">Email Address</label>
+                <input type="email" class="form-control" id="emailAddress">
+                <div class="invalid-feedback">Please enter your Email Address.</div>
+            </div>
+        </div>
+
+        <div class="row justify-content-center mb-3">
+            <div class="col-md-8">
+                <label class="form-label">Alternative Email Address</label>
+                <input type="email" class="form-control" id="altEmail">
+                <div class="invalid-feedback">Please enter an alternative Email Adress.</div>
+            </div>
+        </div>
+
+        <div class="row justify-content-center mb-3">
+            <div class="col-md-4">
+                <label class="form-label">Scheduled Date of the Event</label>
+                <input type="date" class="form-control" id="date">
+                <div class="invalid-feedback">Please specify the date.</div>
+            </div>
+
+            <div class="col-md-4">
+                <label class="form-label">Start / End Time</label>
+                <input type="time" class="form-control mb-2" id="start">
+                <div class="invalid-feedback">Please specify the start time.</div>
+                <input type="time" class="form-control" id="end">
+                <div class="invalid-feedback">Please specify the end time.</div>
+            </div>
+        </div>
+
+        <div class="row justify-content-center mb-3">
+            <div class="col-md-8">
+                <label class="form-label">Location</label>
+                <textarea class="form-control" rows="2" id="location"></textarea>
+                <div class="invalid-feedback">Please specify the location.</div>
+            </div>
+        </div>
+
+        <div class="row justify-content-center mb-4">
+            <div class="col-md-8">
+                <label class="form-label">Proof of Payment</label>
+                <input type="file" class="form-control" id="proof">
+                <div class="invalid-feedback">Please upload the proof of payment.</div>
+            </div>
+        </div>
+
+        <div class="row justify-content-center mt-4">
+            <div class="col-md-4 d-flex justify-content-center">
+                <input type="button" value="Submit" onclick="displayInfo()" class="btn w-50 p-3 my-5" id="btn">
+            </div>
+        </div>
+
+    </form>
+</div>
+
+    </div>
+    <script>
+        function displayInfo() {
+
+            let firstName = document.getElementById('firstName');
+            let lastName = document.getElementById('lastName');
+            let contactNumber = document.getElementById('contactNumber');
+            let emailAddress = document.getElementById('emailAddress');
+            let altEmail = document.getElementById('altEmail');
+            let location = document.getElementById('location');
+            let date = document.getElementById('date');
+            let start = document.getElementById('start');
+            let end = document.getElementById('end');
+            let proof = document.getElementById('proof');
+
+            let isValid = true;
+
+            function validate(input, condition) {
+                if (condition) {
+                    input.classList.add('is-invalid');
+                    input.classList.remove('is-valid');
+                    isValid = false;
+                } else {
+                    input.classList.remove('is-invalid');
+                    input.classList.add('is-valid');
+                }
+            }
+
+            validate(firstName, firstName.value === "");
+            validate(lastName, lastName.value === "");
+            validate(contactNumber, contactNumber.value === "");
+            validate(emailAddress, emailAddress.value === "");
+            validate(altEmail, altEmail.value === "");
+            validate(location, location.value === "");
+            validate(date, !date.value);
+            validate(start, !start.value);
+            validate(end, !end.value);
+            validate(proof, proof.files.length === 0);
+
+            if (isValid) {
+                Swal.fire({
+                    icon: "success",
+                    title: "Submitted!",
+                    text: "Your form has been submitted successfully."
+                }).then((result) => {
+                    if (result.isConfirmed) {
+                        window.location.href = "after_booking.html";
+                    }
+                });
+            }
+        }
+
+
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
+</body>
+</html>
